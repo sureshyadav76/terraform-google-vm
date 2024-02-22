@@ -26,6 +26,7 @@ resource "google_compute_instance" "default" {
   zone         = var.gcp_zone
   tags         = var.instance_tags
   project      = data.google_client_config.current.project
+
   boot_disk {
     initialize_params {
       image = var.image
