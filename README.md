@@ -19,7 +19,6 @@ This section configures a compute instance. It specifies the name, environment, 
 ```hcl
 module "compute_instance" {
   source                 = "git@github.com:sureshyadav76/terraform-google-vm.git"
-  version                = "1.0.1"
   name                   = "app"
   environment            = "test"
   instance_count         = 1
@@ -28,7 +27,7 @@ module "compute_instance" {
   image                  = "ubuntu-2204-jammy-v20230908"
   gcp_zone               = "asia-northeast1-a"
   service_account_scopes = ["cloud-platform"]
-  subnetwork             = module.subnet.subnet_id
+  subnetwork             = var.subnetwork
 
   # Enable public IP only if enable_public_ip is true
   enable_public_ip = true
@@ -48,7 +47,7 @@ For detailed examples on how to use this module, please refer to the [Examples](
 Your Name Replace **MIT** and **sureshyadav76** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/sureshyadav76/terraform-google-vm/blob/master/LICENSE) file for details.
+This project is licensed under the **MIT** License - see the [LICENSE](..) file for details.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
